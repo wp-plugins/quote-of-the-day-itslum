@@ -1,11 +1,11 @@
 === Quote of the Day - ITslum===
 Contributors: ITslum
 Donate link: http://itslum.com/donate
-Tags: quote, quote of the day, quotes, quotations, famous quotes, itslum quotes, itslum, sayings, meaningful, funny, wisdom, love, widget, sidebar, quotation, famous sayings
+Tags: quote, quote of the day, quotes rotator, quotations, famous quotes, itslum quotes, itslum, sayings, meaningful, funny, wisdom, love, widget, sidebar, quotation, famous sayings
 
 Requires at least: 3.0.1
-Tested up to: 3.9.1
-Stable tag: 1.0
+Tested up to: 4.0.0
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ Yes!  You can add as many widgets as you want where ever want quote to show. Eac
 ITslum Quotes repository is reviewed strictly and there are exceptionaly low chances of any rude or abusive content.
 
 = What versions of WordPress does Quote of the Day work with? =
-Quote of the Day widget is tested will all (3.x or greater) versions including 3.7.1,  3.8.1, and 3.9.1.  
+Quote of the Day widget is tested will all (3.x or greater) versions including 3.7.1,  3.8.1, 3.9.1 and 4.0.0.  
 
 If Quote of the Day plugin does work with a particular version of wordpress or there is any other issue, you can [contact us](http://itslum.com/contact)!
 
@@ -52,11 +52,17 @@ If Quote of the Day plugin does work with a particular version of wordpress or t
 1. Screenshot of blog page with Quote Of The Day widgets.
 
 == Changelog ==
+= 2.0 =
+* Stable release.
+* Full tested and working bug free version of Quote of the day widget using ITslum API!
+
 = 1.0 =
 * Initial release.
 * Beta release of Quote of the day widget to display new quote every day using ITslum API!
 
 == Upgrade Notice ==
+= 2.0 =
+* Bug/error free release.
 
 = 1.0 =
 * Initial release.
