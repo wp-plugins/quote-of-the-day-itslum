@@ -18,7 +18,7 @@
 Plugin Name: Quote of the Day - ITslum
 Plugin URI: http://dir.itslum.com/quotes/for-websites/
 Description: Show your website visiotrs quote of the day in your site's sidebar. To install, click activate and then go to Appearance > Widgets and look for the 'Quote of the Day- ITslum'. Then, drag the widget to your sidebar.
-Version: 1.0
+Version: 2.1
 Author: ITslum SOLUTIONS
 Author URI: http://solutions.itslum.com
 */
