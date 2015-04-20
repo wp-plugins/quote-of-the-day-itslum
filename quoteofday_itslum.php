@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014 ITslum SOLUTIONS, Inc. 
+/*  Copyright 2015 ITslum SOLUTIONS, Inc. 
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
