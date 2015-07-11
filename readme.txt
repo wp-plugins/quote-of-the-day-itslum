@@ -4,8 +4,8 @@ Donate link: http://itslum.com/donate
 Tags: quote, quote of the day, quotes rotator, quotations, famous quotes, itslum quotes, itslum, sayings, meaningful, funny, wisdom, love, widget, sidebar, quotation, famous sayings
 
 Requires at least: 3.0.1
-Tested up to: 4.2.0
-Stable tag: 2.1
+Tested up to: 4.2.2
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ If Quote of the Day plugin does work with a particular version of wordpress or t
 * Beta release of Quote of the day widget to display new quote every day using ITslum API!
 
 == Upgrade Notice ==
+= 2.2 =
+* Wordpress 4.2 comaptible release.
+
 = 2.1 =
 * Wordpress 4.0 comaptible release.
 

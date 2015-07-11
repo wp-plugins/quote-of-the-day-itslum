@@ -17,8 +17,8 @@
 /*
 Plugin Name: Quote of the Day - ITslum
 Plugin URI: http://dir.itslum.com/quotes/for-websites/
-Description: Show your website visiotrs quote of the day in your site's sidebar. To install, click activate and then go to Appearance > Widgets and look for the 'Quote of the Day- ITslum'. Then, drag the widget to your sidebar.
-Version: 2.1
+Description: Show your website visiotrs new quotation each day. Install then click activate and then go to Appearance > Widgets and look for the 'Quote of the Day- ITslum'. Then, drag the widget to area where you want to show quotations.
+Version: 2.2
 Author: ITslum SOLUTIONS
 Author URI: http://solutions.itslum.com
 */
@@ -49,6 +49,7 @@ class QuoteOfDay_ITslum extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$qtype = apply_filters( 'widget_title', $instance['qtype'] );
+		$ctitle = apply_filters( 'widget_title', $instance['ctitle'] );
 
                 $title_hash = array(
                      "quote" => "Quote of the Day",
@@ -58,10 +59,16 @@ class QuoteOfDay_ITslum extends WP_Widget {
                  );
 
 		echo $args['before_widget'];
-		if ( ! empty( $qtype) )
-			//echo $args['before_title'] . $title_hash[$qtype]. $args['after_title'];
+		if ( ! empty( $ctitle) )
+			echo $args['before_title'] . $ctitle. $args['after_title'];
 
-		echo __( '<script type="text/javascript" src="http://dir.itslum.com/quotes/api/' . $qtype. '/index.php?h=off"></script>', 'text_domain' );
+			$jsonxix = file_get_contents('http://dir.itslum.com/quotes/api/' . $qtype. '.php');
+			$objxix = json_decode($jsonxix);
+			echo '<p>' . str_replace(";", "<br/>", $objxix->quote) . '</p>';
+			echo '<i><a href="http://dir.itslum.com/quotes/topic/' . str_replace(" ", "+", $objxix->author) . '" target="_blank">__' . $objxix->author . '</a></i>';
+
+
+		//echo __( '<script type="text/javascript" src="http://dir.itslum.com/quotes/api/' . $qtype. '/index.php?h=off"></script>', 'text_domain' );
 		echo $args['after_widget'];
 	}
 
@@ -79,6 +86,12 @@ class QuoteOfDay_ITslum extends WP_Widget {
 		else {
 			$qtype = "qotd";
 		}
+		if ( isset( $instance[ 'ctitle' ] ) ) {
+			$mytitle = $instance[ 'ctitle' ];
+		}
+		else {
+			$mytitle = "Quote of the day";
+		}
 		?>
 	         <p>
 			<label for="<?php echo $this->get_field_id( 'qtype' ); ?>">Select quotation type:</label> 
@@ -88,6 +101,10 @@ class QuoteOfDay_ITslum extends WP_Widget {
 				<option value="health" <?php if ( 'health' == $qtype ) echo 'selected="selected"'; ?>>Health Quote of the Day</option>
 				<option value="nature" <?php if ( 'nature' == $qtype ) echo 'selected="selected"'; ?>>Nature Quote of the Day</option>
 			</select>
+
+			<label for="<?php echo $this->get_field_id( 'ctitle' ); ?>">Title:</label>
+			<input id="<?php echo $this->get_field_id( 'ctitle' ); ?>" name="<?php echo $this->get_field_name( 'ctitle' ); ?>" class="widefat" style="width:100%;" type="text" value="<?php echo mytitle; ?>"/>
+
 		</p>
 		<?php 
 	}
@@ -105,7 +122,7 @@ class QuoteOfDay_ITslum extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['qtype'] = ( ! empty( $new_instance['qtype'] ) ) ? strip_tags( $new_instance['qtype'] ) : '';
-
+        $instance['ctitle'] = ( ! empty( $new_instance['ctitle'] ) ) ? strip_tags( $new_instance['ctitle'] ) : '';
 		return $instance;
 	}
 
