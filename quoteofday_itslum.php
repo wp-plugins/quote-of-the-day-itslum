@@ -103,7 +103,7 @@ class QuoteOfDay_ITslum extends WP_Widget {
 			</select>
 
 			<label for="<?php echo $this->get_field_id( 'ctitle' ); ?>">Title:</label>
-			<input id="<?php echo $this->get_field_id( 'ctitle' ); ?>" name="<?php echo $this->get_field_name( 'ctitle' ); ?>" class="widefat" style="width:100%;" type="text" value="<?php echo mytitle; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'ctitle' ); ?>" name="<?php echo $this->get_field_name( 'ctitle' ); ?>" class="widefat" style="width:100%;" type="text" value="<?php echo $mytitle; ?>"/>
 
 		</p>
 		<?php 
